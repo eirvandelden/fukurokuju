@@ -1,0 +1,29 @@
+// Place all the styles related to the quote controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Imports */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400); /* Google Webfont to replace Helvetica Nueue if needed */
+@import url(http://fonts.googleapis.com/css?family=Great+Vibes); /* Google Webfont to replace Helvetica Nueue if needed */
+
+body{
+    height: 100%;
+    font: {
+        family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue" ,"Open Sans", "Segoe UI", "Lucida Sans", Helvetica, Verdana, Arial, sans-serif;
+        weight: 300; }
+}
+
+blockquote{
+    width: 15em;
+    margin: 50% auto 0px;
+    font: {
+        size: 2em;
+    }
+    cite{
+        float: right;
+        font:{
+            family: 'Great Vibes', cursive;
+            size: .75em;
+        }
+    }
+}
