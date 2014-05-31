@@ -15,7 +15,9 @@ quotes = [
 { quote: "He who never made a mistake, never made a discovery", author: "Samual Smiles" },
 { quote: "Unforgiving is like take poison, hoping the other person will die", author: "Mark Gungor", favorite: true },
 { quote: "Never waste a minute thinking about people you don't like", author: "Dwight D. Eisenhower", },
-{ quote: "DFTBA! \n (Don't Forget to be Awesome)", author: "John Green", favorite: true }
+{ quote: "DFTBA! \n (Don't Forget to be Awesome)", author: "John Green", favorite: true },
+{ quote: "Everything has its beauty, but not everyone sees it", author: "Confucius" },
+{ quote: "Amateurs sit and wait for inspiration, the rest of us just get up and go to work", author: "Stephen King", favorite: true }
 ]
 
 quotes.each do |quote|
