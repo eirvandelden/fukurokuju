@@ -15,11 +15,15 @@ body{
 
 blockquote{
     width: 15em;
-    margin: 50% auto 0px;
+    margin: 25% auto 0;
     font: {
         size: 2em;
     }
+    p{
+        display:none;
+    }
     cite{
+        display:none;
         float: right;
         font:{
             family: 'Great Vibes', cursive;
