@@ -6,7 +6,10 @@ Rails.application.routes.draw do
     # root 'welcome#index'
     root 'quote#home'
 
-    resources :quote
+    get 'quotes/new' => 'quotes#new'
+    get 'quotes/:id' => 'quotes#edit'
+    resources :quotes
+
 
     # Example of regular route:
     #   get 'products/:id' => 'catalog#view'
