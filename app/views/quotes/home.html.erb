@@ -1,5 +1,6 @@
-<article id=<%= "quote_"+ @quote.id.to_s %> class='quote'>
+<%= content_for :background_colour, @quote.colour.hex_value %>
 
+<article id=<%= "quote_"+ @quote.id.to_s %> class='quote'>
 <blockquote>
     <p><%= @quote.quote %></p>
     <cite><%= @quote.author %></cite>

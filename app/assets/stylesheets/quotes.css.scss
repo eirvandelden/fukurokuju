@@ -29,15 +29,20 @@ blockquote{
     width: 15em;
     margin: 25% auto 0;
     border: none;
+    background-color: rgba( 255, 255, 255, 0.2);
+    text-align: right;
+    border-radius: 5px;
+
     font: {
         size: 2em;
     }
     p{
         display:none;
+        text-align: left;
     }
     cite{
         display:none;
-        float: right;
+    transition: background 0.5s ease-in-out;
         font:{
             family: 'Great Vibes', cursive;
             size: .8em;
