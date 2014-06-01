@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140530145303) do
+ActiveRecord::Schema.define(version: 20140601112542) do
 
   create_table "quotes", force: true do |t|
     t.text     "quote"
