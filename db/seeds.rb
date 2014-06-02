@@ -7,8 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 colours = [
-{ name: "Kabisa Blue", hex_value:"#7FA0B6" },
-{ name: "White", hex_value: "#FFFFFF"}
+{ name: "Kabisa Blue", hex_value:"#7FA0B6", white_on_black: true },
+{ name: "White", hex_value: "#FFFFFF" },
+{ name: "Red", hex_value: "#C63D0F", white_on_black: true },
+{ name: "Yellow", hex_value: "#FFE658" }
 ]
 
 colours.each do |colour|
