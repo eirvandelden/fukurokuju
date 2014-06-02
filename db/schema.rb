@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140601200540) do
+ActiveRecord::Schema.define(version: 20140602113018) do
 
   create_table "colours", force: true do |t|
     t.string   "name"
     t.string   "hex_value"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "white_on_black"
   end
 
   create_table "quotes", force: true do |t|
