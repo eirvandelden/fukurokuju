@@ -1,6 +1,6 @@
 <%= content_for :title, ( @quote.new_record? ? "Create a new quote" : "Quote by " + @quote[ :author ] ) %>
 
-<%= form_for( @quote, :html => { :class => 'form-horizontal' } ) do |f| %>
+<%= form_for( @quote, html: { class: 'form-horizontal', multipart: true } ) do |f| %>
 <% if @quote.errors.any? %>
 <div id="error_explanation">
     <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
@@ -21,12 +21,20 @@
         <%= f.label :author, class: 'control-label' %></span>
         <div class="controls"><%= f.text_field :author %></div>
     </div>
+    <div class="control-group">
+        <%= f.label :favorite, class: 'control-label' %></span>
+        <div class="controls"><%= f.check_box :favorite %></div>
+    </div>
         <% Colour.all.each do |colour| %>
             <div class="control-group">
                 <%= f.radio_button( :colour_id, colour[ :id ] ) %>
                 <%= label_tag( :colour_id, colour[ :name ], class: 'control-label' ) %>
             </div>
         <% end %>
+        <div class="control-group">
+            Currently has audio file: <%= ( @quote.audio.exists? ?  @quote.audio.original_filename : "None") %>
+            <%= f.file_field :audio %>
+        </div>
 
 
     <div class="control-group">

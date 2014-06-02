@@ -1,5 +1,9 @@
 <%= content_for :background_colour, @quote.colour.hex_value %>
 
+<% if @quote.audio.exists? %>
+<%= audio_tag @quote.audio.url, autoplay: true, loop: true %>
+<% end %>
+
 <article id=<%= "quote_"+ @quote.id.to_s %> class='quote'>
 <blockquote class=<%= "white_on_black" if @quote.colour.white_on_black? %>>
     <p><%= @quote.quote %></p>

@@ -45,3 +45,6 @@ group :development do
     gem 'pry-rails' #allow to use pry as an irb
     gem 'pry-debugger' #use pry with debugger 'stepping' functionality
 end
+
+#for fileuploading
+gem "paperclip", "~> 4.1"
