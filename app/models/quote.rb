@@ -2,8 +2,8 @@ class Quote < ActiveRecord::Base
     belongs_to :colour
     has_attached_file :audio
     validates_attachment :audio, content_type: { content_type: [ "audio/m4a", "audio/mpeg" ] }
-    has_attached_file :background
-    validates_attachment :background, :styles => { :thumb => "100x100>" } , content_type: { content_type: [ "image/png", "image/jpeg", "image/jpeg" ] }
+    has_attached_file :background, styles: { thumb:"100x100#", large:"100x100>" }
+    validates_attachment :background , content_type: { content_type: [ "image/png", "image/jpeg", "image/jpeg" ] }
 
 
 def self.random_quote
