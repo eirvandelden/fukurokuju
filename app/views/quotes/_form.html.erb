@@ -35,7 +35,10 @@
             Currently has audio file: <%= ( @quote.audio.exists? ?  @quote.audio.original_filename : "None") %>
             <%= f.file_field :audio %>
         </div>
-
+        <div class="control-group">
+            Currently has background: <%= ( @quote.background.exists? ? image_tag( @quote.background.url(:thumb) ) : "None" ) %>
+            <%= f.file_field :background %>
+        </div>
 
     <div class="control-group">
         <div class="controls">
