@@ -1,10 +1,9 @@
 <%= content_for :title, ( @quote.new_record? ? "Create a new quote" : "Quote by " + @quote[ :author ] ) %>
 
-<%= form_for(@quote) do |f| %>
+<%= form_for( @quote, :html => { :class => 'form-horizontal' } ) do |f| %>
 <% if @quote.errors.any? %>
 <div id="error_explanation">
     <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
-
     <ul>
         <% @quote.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -14,15 +13,26 @@
 <% end %>
 
 <fieldset>
-    <ol>
-        <li><%= f.label :quote %><%= f.text_area :quote %></li>
-        <li><%= f.label :author %><%= f.text_field :author %></li>
-    </ol>
+    <div class="control-group">
+        <%= f.label :quote, class: 'control-label' %>
+        <div class="controls"><%= f.text_area :quote, size: '60x5' %></div>
+        </div>
+    <div class="control-group">
+        <%= f.label :author, class: 'control-label' %></span>
+        <div class="controls"><%= f.text_field :author %></div>
+    </div>
+        <% Colour.all.each do |colour| %>
+            <div class="control-group">
+                <%= f.radio_button( :colour_id, colour[ :id ] ) %>
+                <%= label_tag( :colour_id, colour[ :name ], class: 'control-label' ) %>
+            </div>
+        <% end %>
+
+
+    <div class="control-group">
+        <div class="controls">
+        <%= f.submit class: 'btn'  %>
+        </div>
+    </div>
 </fieldset>
-
-
-
-<div class="actions">
-    <%= f.submit %>
-</div>
 <% end %>

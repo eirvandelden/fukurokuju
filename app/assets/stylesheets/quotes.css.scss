@@ -14,15 +14,21 @@ body{
         }
 }
 /* MARK: Header */
-
 #hdrCenter{
     width:100%;
     text-align:center;
     color: #888;
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: 300;
     height: 40px;
+    margin-top: 20px;
 }
+nav{margin-top: -40px; }
+
+div.container[role=main]{
+    margin-top: 40px;
+}
+
 
 /* MARK: Single Quote */
 blockquote{
@@ -42,10 +48,13 @@ blockquote{
     }
     cite{
         display:none;
-    transition: background 0.5s ease-in-out;
+        transition: background 0.5s ease-in-out;
         font:{
             family: 'Great Vibes', cursive;
             size: .8em;
         }
     }
+}
+blockquote.white_on_black p{
+    color: #dddddd;
 }

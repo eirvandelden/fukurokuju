@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     get 'quotes/new' => 'quotes#new'
     get 'quotes/:id' => 'quotes#edit'
     resources :quotes
-
+    get 'colours/new' => 'colours#new'
+    get 'colours/:id' => 'colours#edit'
+    resources :colours
 
     # Example of regular route:
     #   get 'products/:id' => 'catalog#view'
