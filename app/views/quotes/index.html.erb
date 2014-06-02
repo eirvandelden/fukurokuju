@@ -1,6 +1,7 @@
 <%= content_for :title, "Quotes" %>
 <%= content_for :background_colour, "#FFF" %>
 
+<h2>Your quotes</h2>
 <ul>
     <% @quotes.each do |quote| %>
         <li>
@@ -8,5 +9,15 @@
       </tr>
     <% end %>
 </ul>
+
+<h2>Public quotes</h2>
+<ul>
+    <% @public_quotes.each do |quote| %>
+        <li>
+            <%= link_to quote[:quote], edit_quote_path(quote) %>, by <%= quote[ :author ] %> | <%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </tr>
+    <% end %>
+</ul>
+
 
 <%= link_to 'New Quote', new_quote_path %>

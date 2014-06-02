@@ -48,3 +48,6 @@ end
 
 #for fileuploading
 gem "paperclip", "~> 4.1"
+
+#user and user authentication
+gem 'sorcery'
