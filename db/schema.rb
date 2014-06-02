@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602132658) do
+ActiveRecord::Schema.define(version: 20140602143107) do
 
   create_table "colours", force: true do |t|
     t.string   "name"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20140602132658) do
   create_table "quotes", force: true do |t|
     t.text     "quote"
     t.string   "author"
-    t.boolean  "favorite",           default: false
+    t.boolean  "favorite",                default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "colour_id"
@@ -32,6 +32,10 @@ ActiveRecord::Schema.define(version: 20140602132658) do
     t.string   "audio_content_type"
     t.integer  "audio_file_size"
     t.datetime "audio_updated_at"
+    t.string   "background_file_name"
+    t.string   "background_content_type"
+    t.integer  "background_file_size"
+    t.datetime "background_updated_at"
   end
 
   add_index "quotes", ["colour_id"], name: "index_quotes_on_colour_id"

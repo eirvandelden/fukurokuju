@@ -58,6 +58,6 @@ end
 
 # Never trust parameters from the scary internet, only allow the white list through.
 def quote_params
-    params.require( :quote ).permit( :quote, :author, :favorite, :colour_id, :audio)
+    params.require( :quote ).permit( :quote, :author, :favorite, :colour_id, :audio, :background)
 end
 end
