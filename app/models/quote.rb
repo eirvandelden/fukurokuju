@@ -15,6 +15,7 @@ end
 #post: return an random quote, taking favorites into consideration
 def self.random_quote_of_user( user )
     quotes = user.quotes.concat( Quote.favorites( user ) ).flatten #add duplicates to have higher chance to get picked
+    quotes = Quote.public if quotes.blank?
 
 return quotes.shuffle.first
 end
