@@ -2,7 +2,13 @@ class Quote < ActiveRecord::Base
     belongs_to :colour
     
 def self.random_quote
-    return Quote.order("RANDOM()").first #return any quote
+    quotes = Quote.all
+    quotes.concat Quote.favorites #add duplicates to have higher chance to get picked
+    return quotes.shuffle.first #return any quote
+end
+
+def self.favorites
+    return Quote.where( favorite: true )
 end
 
 def colour?

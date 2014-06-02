@@ -28,7 +28,8 @@ quotes = [
 { quote: "Never waste a minute thinking about people you don't like", author: "Dwight D. Eisenhower", },
 { quote: "DFTBA! \n (Don't Forget to be Awesome)", author: "John Green", favorite: true },
 { quote: "Everything has its beauty, but not everyone sees it", author: "Confucius" },
-{ quote: "Amateurs sit and wait for inspiration, the rest of us just get up and go to work", author: "Stephen King", favorite: true }
+{ quote: "Amateurs sit and wait for inspiration, the rest of us just get up and go to work", author: "Stephen King", favorite: true },
+{ quote: "Stay hungry. Stay foolish", author: "Steve Jobs" }
 ]
 
 quotes.each do |quote|
