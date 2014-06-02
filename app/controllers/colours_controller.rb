@@ -2,7 +2,8 @@ class ColoursController < ApplicationController
     before_action :set_colours, only: [ :edit, :update, :destroy]
 
 def index
-    @colours = Colour.all
+    @colours = current_user.colours
+    @public_colours = Colour.public
 end
 
 def new
@@ -14,6 +15,7 @@ end
 
 def create
     @colour = Colour.new( colour_params )
+    @colour.user = current_user
 
     respond_to do |format|
         if @colour.save
@@ -50,7 +52,7 @@ end
 
 # Never trust parameters from the scary internet, only allow the white list through.
 def colour_params
-    params.require( :colour ).permit( :name, :hex_value, :white_on_black )
+    params.require( :colour ).permit( :name, :hex_value, :white_on_black, :public )
 end
 
 

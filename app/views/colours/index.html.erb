@@ -1,8 +1,18 @@
 <%= content_for :title, "Colours" %>
 <%= content_for :background_colour, "#FFF" %>
 
+<h2>Your colours</h2>
 <ul>
     <% @colours.each do |colour| %>
+        <li>
+            <%= link_to colour[ :name ], edit_colour_path( colour ) %> | <%= link_to 'Destroy', colour, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </tr>
+    <% end %>
+</ul>
+
+<h2>Public colours</h2>
+<ul>
+    <% @public_colours.each do |colour| %>
         <li>
             <%= link_to colour[ :name ], edit_colour_path( colour ) %> | <%= link_to 'Destroy', colour, method: :delete, data: { confirm: 'Are you sure?' } %></li>
       </tr>

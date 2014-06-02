@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602195145) do
+ActiveRecord::Schema.define(version: 20140602214302) do
 
   create_table "colours", force: true do |t|
     t.string   "name"
@@ -19,7 +19,11 @@ ActiveRecord::Schema.define(version: 20140602195145) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "white_on_black"
+    t.integer  "user_id"
+    t.boolean  "public",         default: true
   end
+
+  add_index "colours", ["user_id"], name: "index_colours_on_user_id"
 
   create_table "quotes", force: true do |t|
     t.text     "quote"
@@ -36,9 +40,12 @@ ActiveRecord::Schema.define(version: 20140602195145) do
     t.string   "background_content_type"
     t.integer  "background_file_size"
     t.datetime "background_updated_at"
+    t.integer  "user_id"
+    t.boolean  "public",                  default: true
   end
 
   add_index "quotes", ["colour_id"], name: "index_quotes_on_colour_id"
+  add_index "quotes", ["user_id"], name: "index_quotes_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                        null: false

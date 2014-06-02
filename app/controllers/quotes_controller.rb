@@ -3,11 +3,12 @@ class QuotesController < ApplicationController
     skip_before_filter :require_login, only: [ :home ]
 
 def index
-    @quotes = Quote.all
+    @quotes = current_user.quotes
+    @public_quotes = Quote.public
 end
 
 def home
-    @quote = Quote.random_quote
+    @quote = ( current_user.blank? ? Quote.random_quote : Quote.random_quote_of_user( current_user ) )
 end
 
 def new
@@ -19,6 +20,7 @@ end
 
 def create
     @quote = Quote.new(quote_params)
+    @quote.user = current_user
 
     respond_to do |format|
         if @quote.save
