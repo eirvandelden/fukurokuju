@@ -8,5 +8,8 @@ $(document).ready(function(){
                   .mouseleave( function(){
                              $( this ).css( "margin-top", -40 );
                              });
+                  setTimeout(function() {
+                             $( ".notification" ).fadeOut().empty();
+                             }, 5000);
 
                   });

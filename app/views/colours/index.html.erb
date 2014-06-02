@@ -1,10 +1,10 @@
-<%= content_for :title, "Colour" %>
+<%= content_for :title, "Colours" %>
 <%= content_for :background_colour, "#FFF" %>
 
 <ul>
     <% @colours.each do |colour| %>
         <li>
-            <%= link_to colour[ :name ], edit_colour_path( colour ) %>, by <%= colour[ :author ] %> | <%= link_to 'Destroy', colour, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            <%= link_to colour[ :name ], edit_colour_path( colour ) %> | <%= link_to 'Destroy', colour, method: :delete, data: { confirm: 'Are you sure?' } %></li>
       </tr>
     <% end %>
 </ul>
