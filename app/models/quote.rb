@@ -1,6 +1,9 @@
 class Quote < ActiveRecord::Base
     belongs_to :colour
-    
+    has_attached_file :audio
+    validates_attachment :audio, content_type: { content_type: [ "audio/m4a", "audio/mpeg" ] }
+
+
 def self.random_quote
     quotes = Quote.all
     quotes.concat Quote.favorites #add duplicates to have higher chance to get picked
