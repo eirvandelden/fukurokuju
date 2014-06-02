@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140601112542) do
+ActiveRecord::Schema.define(version: 20140602113018) do
+
+  create_table "colours", force: true do |t|
+    t.string   "name"
+    t.string   "hex_value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "white_on_black"
+  end
 
   create_table "quotes", force: true do |t|
     t.text     "quote"
@@ -19,6 +27,9 @@ ActiveRecord::Schema.define(version: 20140601112542) do
     t.boolean  "favorite",   default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "colour_id"
   end
+
+  add_index "quotes", ["colour_id"], name: "index_quotes_on_colour_id"
 
 end

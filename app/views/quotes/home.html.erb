@@ -1,6 +1,7 @@
-<article id=<%= "quote_"+ @quote.id.to_s %> class='quote'>
+<%= content_for :background_colour, @quote.colour.hex_value %>
 
-<blockquote>
+<article id=<%= "quote_"+ @quote.id.to_s %> class='quote'>
+<blockquote class=<%= "white_on_black" if @quote.colour.white_on_black? %>>
     <p><%= @quote.quote %></p>
     <cite><%= @quote.author %></cite>
 </blockquote>

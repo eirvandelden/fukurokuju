@@ -14,33 +14,46 @@ body{
         }
 }
 /* MARK: Header */
-
 #hdrCenter{
     width:100%;
     text-align:center;
     color: #888;
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: 300;
     height: 40px;
+    margin-top: 20px;
 }
+nav{margin-top: -40px; }
+
+div.container[role=main]{
+    margin-top: 40px;
+}
+
 
 /* MARK: Single Quote */
 blockquote{
     width: 15em;
     margin: 25% auto 0;
-    border: none;
+    background-color: rgba( 255, 255, 255, 0.2);
+    text-align: right;
+    border-radius: 5px;
+
     font: {
         size: 2em;
     }
     p{
         display:none;
+        text-align: left;
     }
     cite{
         display:none;
-        float: right;
+        transition: background 0.5s ease-in-out;
         font:{
             family: 'Great Vibes', cursive;
             size: .8em;
         }
     }
+}
+blockquote.white_on_black p{
+    color: #dddddd;
 }

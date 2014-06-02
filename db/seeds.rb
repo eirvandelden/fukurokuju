@@ -6,6 +6,17 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+colours = [
+{ name: "Kabisa Blue", hex_value:"#7FA0B6", white_on_black: true },
+{ name: "White", hex_value: "#FFFFFF" },
+{ name: "Red", hex_value: "#C63D0F", white_on_black: true },
+{ name: "Yellow", hex_value: "#FFE658" }
+]
+
+colours.each do |colour|
+    Colour.create( colour ) unless Colour.exists?( hex_value: colour[ :hex_value ] )
+end
+
 quotes = [
 { quote: "One man's intelligence is like a tree that has been simply stuck in the ground", author: "Yamamoto Tsunetomo", favorite: true },
 { quote: "Science is organised knowledge. Wisdom is organised life", author: "Immanual Kant" },
@@ -17,9 +28,11 @@ quotes = [
 { quote: "Never waste a minute thinking about people you don't like", author: "Dwight D. Eisenhower", },
 { quote: "DFTBA! \n (Don't Forget to be Awesome)", author: "John Green", favorite: true },
 { quote: "Everything has its beauty, but not everyone sees it", author: "Confucius" },
-{ quote: "Amateurs sit and wait for inspiration, the rest of us just get up and go to work", author: "Stephen King", favorite: true }
+{ quote: "Amateurs sit and wait for inspiration, the rest of us just get up and go to work", author: "Stephen King", favorite: true },
+{ quote: "Stay hungry. Stay foolish", author: "Steve Jobs" }
 ]
 
 quotes.each do |quote|
     Quote.create( quote ) unless Quote.exists?( quote: quote[ :quote ] )
 end
+
