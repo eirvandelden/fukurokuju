@@ -7,7 +7,7 @@ def white_on_black?
 end
 
 def self.with_access( user )
-    return user.colours.concat( self.public )
+    return user.colours.concat( self.public ).flatten
 end
 
 def self.public

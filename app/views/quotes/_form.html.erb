@@ -25,14 +25,26 @@
         <%= f.label :favorite, class: 'control-label' %></span>
         <div class="controls"><%= f.check_box :favorite %></div>
     </div>
+    <% unless @quote.colour.blank? %>
+    Current colour: <%= @quote.colour.name %>
+    <% end %>
         <% current_user.colours.each do |colour| %>
             <div class="control-group">
                 <%= f.radio_button( :colour_id, colour[ :id ] ) %>
                 <%= label_tag( :colour_id, colour[ :name ], class: 'control-label' ) %>
             </div>
         <% end %>
+        <label class='control-label'>Public Colours</label>
+        <% Colour.public.each do |colour| %>
+        <% unless colour.blank? %>
         <div class="control-group">
-            Currently has audio file: <%= ( @quote.audio.exists? ?  @quote.audio.original_filename : "None") %>
+            <%= f.radio_button( :colour_id, colour[ :id ] ) %>
+            <%= label_tag( :colour_id, colour[ :name ], class: 'control-label' ) %>
+        </div>
+        <% end %>
+        <% end %>
+        <div class="control-group">
+            Currently has audio file: <%= ( @quote.audio.exists? ?  @quote.audio.original_filename : "None") %>h
             <%= f.file_field :audio %>
         </div>
         <div class="control-group">
